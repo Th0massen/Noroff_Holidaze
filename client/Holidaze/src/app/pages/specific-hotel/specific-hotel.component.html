@@ -1,0 +1,14 @@
+<div class="[ specific ]">
+  <div class="[ specific--info ]">
+      <h1 class="[ specific--info__title ]">{{ hotelName }}</h1>
+      <p class="[ specific--info__smallcontent ]">{{ hotelData[0].type }}</p>
+      <p class="[ specific--info__content ]">{{ hotelDescription }}</p>
+      <p class="[ specific--info__smallcontent ]">{{ hotelMail }}</p>
+      <p class="[ specific--info__smallcontent ]">Price: ${{ hotelPrice }},-</p>
+      <p class="[ specific--info__smallcontent ]">Max number of guests: {{ hotelMaxGuests }}.</p>
+      <button class="[ specific--info__button ]" (click)="onOrderClick()">Place an enquiry</button>
+  </div>
+  <div class="[ specific--img ]">
+      <img class="[ specific--img__content ]" [src]=hotelData[0].imageUrl alt="Hotel Illustrations">
+  </div>
+</div>

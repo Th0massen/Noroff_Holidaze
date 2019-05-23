@@ -1,0 +1,17 @@
+<form #form [formGroup]="contactForm" method="POST" id="contactForm" (ngSubmit)="onSubmit()" action="http://localhost/noroff_exam/server/contact-success.php">
+  <label for="clientName">Full name</label>
+  <input formControlName="clientName" type="text" name="clientName" id="clientName">
+  <div *ngIf="clientNameError">
+    Name is required.
+  </div>
+  <label for="email">Email Address</label>
+  <input formControlName="clientEmail" type="text" name="email" id="email">
+  <div *ngIf="clientEmailError">
+    Invalid E-mail address.
+  </div>
+  <label for="message">Message</label>
+  <textarea formControlName="clientMessage" name="message" id="message" rows="8" cols="80"></textarea>
+  <button type="submit" value="submit" >Submit</button>
+</form>
+
+<!-- action="http://localhost/noroff_exam/server/contact-success.php" -->

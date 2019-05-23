@@ -1,0 +1,13 @@
+<div class="[ search ]">
+    <img class="[ search--logo ]" [src]="logo" alt="logo">
+    <div class="[ search--bar ]">
+        <input id="searchbar" class="[ search--bar__field ]" (input)="onSearch()" type="text" placeholder="Search for hotels, rooms and houses...">
+    </div> 
+</div>
+<div class="[ hotelpage ]" *ngIf="establishments.length > 0">
+    <app-large-establishment-card *ngFor="let i of filteredResults" [establishments]="i">
+    </app-large-establishment-card>
+</div>
+<div class="[ error ]" *ngIf=" (filteredResults.length < 1)">
+    <p>No results found matching the provided criteria.</p>
+</div>

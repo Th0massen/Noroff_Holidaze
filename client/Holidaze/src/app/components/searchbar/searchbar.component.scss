@@ -1,0 +1,22 @@
+.searchbar{
+    &--field{
+        width: 350px;
+        padding: 10px 5px;
+    }
+    &--btn{
+        height: 40px;
+    }
+}
+
+.dropdown{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 5;
+    &--list{
+        text-align: center;
+        margin: 0 auto;
+    }
+}

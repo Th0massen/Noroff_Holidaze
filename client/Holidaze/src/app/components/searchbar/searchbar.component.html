@@ -1,0 +1,10 @@
+<div class="[ searchbar ]">
+  <input id="searchbar" class="[ searchbar--field ]" (input)="onSearch()" type="text" placeholder="Search for hotels, rooms and houses...">
+  <button class="[ searchbar--btn ]" (click)="test()"><i class="[ fas fa-search ]"></i></button>
+</div>
+<div class="[ dropdown ]">
+  <div id="dropdown" class="[ dropdown--list ]" *ngIf="displayHotels.length < establishmentList.length">
+    <app-list-item *ngFor="let i of displayHotels" [hotelData]="i">
+    </app-list-item>
+  </div>
+</div>

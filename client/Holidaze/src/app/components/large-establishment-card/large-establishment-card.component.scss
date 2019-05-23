@@ -1,0 +1,47 @@
+.card{
+    width: 80%;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 50px auto;
+    border: 1px solid black;
+    max-width: 800px;
+    &--img{
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        height: 220px;
+        width: auto;
+        &__title{
+            position: absolute;
+            background-color: #65B3F2;
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            text-align: center;
+            margin-top: 0;
+            padding-top: 0;
+            padding: 5px 10px;
+            width: 120px;
+        }
+        &__element{
+            padding: 0;
+            margin: 0;
+            height: 220px;
+            width: 350px;
+        }    
+    }
+    &--description{
+        padding: 15px;
+        text-align: center;
+        position:relative;
+        &__btn{
+            position: absolute;
+            right: 0;
+            bottom:   0;
+            padding: 10px 15px;
+        }
+    }
+}
+
+#hotel_id{
+    visibility: hidden;
+}

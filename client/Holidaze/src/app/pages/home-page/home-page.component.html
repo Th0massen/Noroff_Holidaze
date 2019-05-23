@@ -1,0 +1,31 @@
+<div class="[ homepage ]">
+  
+  <div class="[ homepage--header ]">
+    <img class="[ homepage--header__logo ]" [src]="logo" alt="logo">
+    <app-searchbar [establishmentList]="this.filteredEstablishments" [dropDown]="true"></app-searchbar>
+  </div>
+  
+  <div class="[ homepage--icons ]">
+    <button class="[ homepage--icons__btn ]" (click)="onHotelClick()">Hotels</button>
+    <button class="[ homepage--icons__btn ]" (click)="onRoomClick()">Rooms</button>
+    <button class="[ homepage--icons__btn ]" (click)="onBnbClick()">Bed & Breakfast</button>
+  </div>
+
+  <div class="[ homepage--info ]">
+    <div class="[ homepage--info__text ]" *ngIf="iconStatus === 'hotel'">
+      <p>Hotels</p>
+    </div>
+    <div class="[ homepage--info__text ]" *ngIf="iconStatus === 'room'">
+      <p>Rooms</p>
+    </div>
+    <div class="[ homepage--info__text ]" *ngIf="iconStatus === 'bnb'">
+      <p>Bed and Breakfast</p>
+    </div>
+  </div>
+
+  <p class="[ homepage--section ]">Highlighted offers</p>
+  <div class="[ homepage--offers ]" *ngIf="establishmentData.length > 0" >
+    <app-establishment-card *ngFor="let i of establishmentData" [establishments]="i">
+    </app-establishment-card>
+  </div>
+</div>
