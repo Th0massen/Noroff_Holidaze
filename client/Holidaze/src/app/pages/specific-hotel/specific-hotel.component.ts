@@ -27,6 +27,7 @@ export class SpecificHotelComponent implements OnInit {
   hotelMaxGuests:string;
   hotelPrice:string;
 
+  showEnquiryForm:boolean = false;
 
   fetchUrlParameters(){
     this.url.queryParams.subscribe( url => {
@@ -52,7 +53,7 @@ export class SpecificHotelComponent implements OnInit {
   }
 
   onOrderClick(){
-    console.log('Feature unavailable for the moment');
+    this.showEnquiryForm = true;
   }
 
 }

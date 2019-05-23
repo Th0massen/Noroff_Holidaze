@@ -1,0 +1,16 @@
+<form class="[ enquiry ]" method="POST" action="enquiry-success.php">
+  <!-- The name of establishment gets sent with the form so that only one JSON file is kept for all establishments.
+  This value must be updated for each establishment. -->
+  <label class="[ enquiry--label ]" for="establishment">Establishment</label>
+  <input class="[ enquiry--input ]" type="text" name="establishment" id="establishment" [value]="hotelDetails[0].establishmentName" readonly>
+  <!-- If additional fields are required, they must be handled in enquiry-success.php -->
+  <label class="[ enquiry--label ]" for="clientName">Full name</label>
+  <input class="[ enquiry--input ]" type="text" name="clientName" id="clientName">
+  <label class="[ enquiry--label ]" for="email">Email Address</label>
+  <input class="[ enquiry--input ]" type="text" name="email" id="email">
+  <label class="[ enquiry--label ]" for="checkin">Check-in</label>
+  <input class="[ enquiry--input ]" type="date" name="checkin" id="checkin">
+  <label class="[ enquiry--label ]" for="checkout">Check-out</label>
+  <input class="[ enquiry--input ]" type="date" name="checkout" id="checkout">
+  <input class="[ enquiry--submit ]" type="submit">
+</form>

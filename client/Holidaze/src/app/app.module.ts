@@ -17,6 +17,7 @@ import { LargeEstablishmentCardComponent } from './components/large-establishmen
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { SpecificHotelComponent } from './pages/specific-hotel/specific-hotel.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { EnquiryComponent } from './components/enquiry/enquiry.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
     LargeEstablishmentCardComponent,
     ListItemComponent,
     SpecificHotelComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    EnquiryComponent
   ],
   imports: [
     BrowserModule,

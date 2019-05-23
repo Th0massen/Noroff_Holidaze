@@ -1,3 +1,25 @@
-form{
-    padding: 75px; 
+.form{
+    padding: 75px;
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    &--label{
+        display: block;
+    }
+    &--input{
+        display: block;
+        padding: 2px;
+        margin: 0 auto;
+        width: 90%;
+    } 
+    &--error{
+        color: red;
+    }
+    &--message{
+        width: 90%;
+    }
+    &--submit{
+        display: block;
+        margin: 0 auto;
+    }
 }

@@ -1,0 +1,11 @@
+.enquiry{
+    width: 450px;
+    background-color: lightgray;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 10px; 
+    &--input{
+        display: block;
+        margin: 0 auto 15px;
+    }
+}

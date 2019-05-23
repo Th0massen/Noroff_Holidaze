@@ -12,3 +12,7 @@
       <img class="[ specific--img__content ]" [src]=hotelData[0].imageUrl alt="Hotel Illustrations">
   </div>
 </div>
+
+<div class="[ enquiryForm ]" *ngIf="showEnquiryForm">
+  <app-enquiry [hotelDetails]="hotelData"></app-enquiry>
+</div>

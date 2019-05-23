@@ -1,17 +1,22 @@
-<form #form [formGroup]="contactForm" method="POST" id="contactForm" (ngSubmit)="onSubmit()" action="http://localhost/noroff_exam/server/contact-success.php">
-  <label for="clientName">Full name</label>
-  <input formControlName="clientName" type="text" name="clientName" id="clientName">
-  <div *ngIf="clientNameError">
+<form #form class="[ form ]" [formGroup]="contactForm" method="POST" id="contactForm" (ngSubmit)="onSubmit()" action="http://localhost/noroff_exam/server/contact-success.php">
+  <label class="[ form--label ]" for="clientName">Full Name</label>
+  <input class="[ form--input ]" formControlName="clientName" type="text" name="clientName" id="clientName">
+  <div class="[ form--error ]" *ngIf="clientNameError">
     Name is required.
-  </div>
-  <label for="email">Email Address</label>
-  <input formControlName="clientEmail" type="text" name="email" id="email">
-  <div *ngIf="clientEmailError">
+  </div><br/>
+  <label class="[ form--label ]" for="email">E-mail Address</label>
+  <input class="[ form--input ]" formControlName="clientEmail" type="text" name="email" id="email">
+  <div class="[ form--error ]" *ngIf="clientEmailError">
     Invalid E-mail address.
-  </div>
-  <label for="message">Message</label>
-  <textarea formControlName="clientMessage" name="message" id="message" rows="8" cols="80"></textarea>
-  <button type="submit" value="submit" >Submit</button>
+  </div><br/>
+  <label class="[ form--label ]" for="message">Message</label>
+  <textarea class="[ form--message ]" formControlName="clientMessage" name="message" id="message" rows="5" cols="50"></textarea>
+  <div class="[ form--error ]" *ngIf="clientMsgError">
+    Please provide as much details as possible on how we can be of service.
+  </div><br/>
+  <button class="[ form--submit ]" type="submit" value="submit" >Submit</button>
 </form>
 
-<!-- action="http://localhost/noroff_exam/server/contact-success.php" -->
+<div class="formSuccess" *ngIf="confirmSentForm"> 
+  <p>Form sent successfully</p>
+</div>

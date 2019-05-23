@@ -13,9 +13,7 @@ export class ContactPageComponent implements OnInit {
   clientEmailError:boolean = false;
   clientMsgError:boolean = false;
 
-  clientName:string;
-  clientEmail:string;
-  clientMsg:string;
+  confirmSentForm:boolean = false;
 
   constructor() {
     this.contactForm = new FormGroup({
@@ -34,6 +32,10 @@ export class ContactPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    if( localStorage.getItem('contactForm') === 'SENT' ){
+      this.confirmSentForm = true;
+      console.log('contact form sent, pop up added soon');
+    }
   }
 
   onSubmit(){
@@ -44,16 +46,20 @@ export class ContactPageComponent implements OnInit {
       switch( nameStatus ){
         case 'INVALID':
           this.clientNameError = true; 
+          document.getElementById('clientName').style.borderLeft = '5px solid red';
           break;
         default:
           this.clientNameError = false;
+          document.getElementById('clientName').style.borderLeft = '5px solid green';
       }
       switch( emailStatus ){
         case 'INVALID':
           this.clientEmailError = true;
+          document.getElementById('email').style.borderLeft = '5px solid red';
           break;
         default: 
           this.clientEmailError = false;
+          document.getElementById('email').style.borderLeft = '5px solid green';
       }
       switch( msgStatus ){
         case 'INVALID':
@@ -64,27 +70,9 @@ export class ContactPageComponent implements OnInit {
       }
     } 
     else{
-      this.clientName = this.contactForm.controls.clientName.value;
-      this.clientEmail = this.contactForm.controls.clientEmail.value;
-      this.clientMsg = this.contactForm.controls.clientMessage.value;
-      this.sendContactData();
+      localStorage.setItem('contactForm', 'SENT');
+      document.forms['contactForm'].submit();
     }
   }
 
-  sendContactData(){
-  let form = (<HTMLInputElement>document.getElementById('contactForm'))
-  form.submit();
-  /*
-    let data = { 
-      clientName: this.clientName, 
-      email: this.clientEmail, 
-      message: this.clientMsg 
-    };
-    let jsonData = JSON.stringify(data);
-    console.log('sending Data', jsonData);
-    let http = new XMLHttpRequest();
-    let url = 'http://localhost/noroff_exam/server/contact-success.php';
-    http.open('Post', url, true );
-    http.send(jsonData);*/ 
-  }
 }
