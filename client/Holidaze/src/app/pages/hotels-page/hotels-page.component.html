@@ -4,6 +4,9 @@
         <input id="searchbar" class="[ search--bar__field ]" (input)="onSearch()" type="text" placeholder="Search for hotels, rooms and houses...">
     </div> 
 </div>
+<div class="[ orderConfirm ]" *ngIf="confirmOrder">
+    <app-enquiry-success></app-enquiry-success>
+</div>
 <div class="[ hotelpage ]" *ngIf="establishments.length > 0">
     <app-large-establishment-card *ngFor="let i of filteredResults" [establishments]="i">
     </app-large-establishment-card>

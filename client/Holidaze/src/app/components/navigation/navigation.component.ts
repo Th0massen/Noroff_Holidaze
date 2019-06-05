@@ -13,5 +13,18 @@ export class NavigationComponent implements OnInit {
   }
 
   logo:string = "../../../assets/logo2.svg"
+  mobileNavStatus:boolean = false;
+
+  showMobile(){
+    if( this.mobileNavStatus === false ){
+      this.mobileNavStatus = true;
+    } else{
+      this.mobileNavStatus = false;
+    }
+  }
+
+  resetNav(){
+    this.mobileNavStatus = false;
+  }
 
 }

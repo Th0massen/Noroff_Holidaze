@@ -1,16 +1,29 @@
-<form class="[ enquiry ]" method="POST" action="enquiry-success.php">
+<form class="[ enquiry ]" id="enquiryForm" [formGroup]="enquiryForm" method="POST" (ngSubmit)="validateForm()" action="http://localhost/noroff_exam/server/enquiry-success.php">
   <!-- The name of establishment gets sent with the form so that only one JSON file is kept for all establishments.
   This value must be updated for each establishment. -->
+  <label class="[ enquiry--title ]">Enquiry Form</label>
   <label class="[ enquiry--label ]" for="establishment">Establishment</label>
-  <input class="[ enquiry--input ]" type="text" name="establishment" id="establishment" [value]="hotelDetails[0].establishmentName" readonly>
-  <!-- If additional fields are required, they must be handled in enquiry-success.php -->
+  <input class="[ enquiry--input ]" formControlName="hotelName" type="text" name="establishment" id="establishment" [value]="hotelDetails[0].establishmentName" readonly>
   <label class="[ enquiry--label ]" for="clientName">Full name</label>
-  <input class="[ enquiry--input ]" type="text" name="clientName" id="clientName">
+  <input class="[ enquiry--input ]" formControlName="fullName" type="text" name="clientName" id="clientName">
+  <div class="[ enquiry--error ]" *ngIf="nameError">
+    Name is required
+  </div>
   <label class="[ enquiry--label ]" for="email">Email Address</label>
-  <input class="[ enquiry--input ]" type="text" name="email" id="email">
+  <input class="[ enquiry--input ]" formControlName="email" type="text" name="email" id="email">
+  <div class="[ enquiry--error ]" *ngIf="emailError">
+    Invalid E-mail Address
+  </div>
   <label class="[ enquiry--label ]" for="checkin">Check-in</label>
-  <input class="[ enquiry--input ]" type="date" name="checkin" id="checkin">
+  <input class="[ enquiry--input ]" formControlName="date_in" type="date" name="checkin" id="checkin">
+  <div class="[ enquiry--error ]" *ngIf="checkInError">
+    Please provide a date for Check-In
+  </div>
   <label class="[ enquiry--label ]" for="checkout">Check-out</label>
-  <input class="[ enquiry--input ]" type="date" name="checkout" id="checkout">
-  <input class="[ enquiry--submit ]" type="submit">
+  <input class="[ enquiry--input ]" formControlName="date_out" type="date" name="checkout" id="checkout">
+  <div class="[ enquiry--error ]" *ngIf="checkOutError">
+    Please provide a date for Check-Out
+  </div>
+  <button class="[ enquiry--submit ]" (click)="validateForm()">Submit</button>
+  <button class="[ enquiry--submit ]" (click)="cancelForm()">Cancel</button>
 </form>

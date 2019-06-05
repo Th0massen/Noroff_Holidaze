@@ -6,6 +6,7 @@ class Establishment
     public $establishmentName;
     public $establishmentEmail;
     public $imageUrl;
+    public $type;
     public $price;
     public $maxGuests;
     public $googleLat;
@@ -20,6 +21,7 @@ $newEstablishment = new Establishment();
 $newEstablishment->establishmentName = $_POST["establishmentName"];
 $newEstablishment->establishmentEmail = $_POST["establishmentEmail"];
 $newEstablishment->imageUrl = $_POST["imageUrl"];
+$newEstablishment->type = $_POST['type'];
 $newEstablishment->price = $_POST["price"];
 $newEstablishment->maxGuests = $_POST["maxGuests"];
 $newEstablishment->googleLat = $_POST["googleLat"];
@@ -29,11 +31,13 @@ $newEstablishment->selfCatering = $_POST["selfCatering"];
 $newEstablishment->id = $_POST["id"];
 
 //Adds object to array
-$establishmentsList = file_get_contents('../client/Holidaze/src/json/establishments.json');
+$establishmentsList = file_get_contents('../client/Holidaze/src/establishments.json');
 $jsonInput = json_decode($establishmentsList, true);
 array_push($jsonInput, $newEstablishment);
 
 //Writes array to JSON file
 $jsonData = json_encode($jsonInput);
-file_put_contents('../client/Holidaze/src/json/establishments.json', $jsonData);
+file_put_contents('../client/Holidaze/src/establishments.json', $jsonData);
+
+header("Location: http://localhost:4200/admin", true, 301);
 ?>

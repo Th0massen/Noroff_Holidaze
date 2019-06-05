@@ -1,0 +1,21 @@
+<div class="[ adminpage ]">
+  <div class="[ adminpage--success ]" *ngIf="newHotelAdded">
+    New hotel Added.
+  </div>
+  <div class="[ adminpage--selector ]">
+    <button class="[ adminpage--selector__btn ]" (click)="onEnquiriesClick()"> View Enquiries </button>
+    <button class="[ adminpage--selector__btn ]" (click)="onMessageClick()"> Read Messages </button>
+    <button class="[ adminpage--selector__btn ]" (click)="onAddClick()"> Add Establishment </button>
+  </div>
+  <div class="[ adminpage--list ]" *ngIf="viewSection === 'enquiries'">
+    <p class="[ adminpage--list__title ]">Enquiries</p>
+    <app-admin-card *ngFor="let i of listOfEnquiries" [data]='i'></app-admin-card>
+  </div>
+  <div class="[ adminpage--list ]" *ngIf="viewSection === 'messages'">
+    <p class="[ adminpage--list__title ]">Messages</p>
+    <app-admin-card *ngFor="let i of listOfMessages" [data]='i'></app-admin-card>
+  </div>
+  <div class="[ adminpage--list ]" *ngIf="viewSection === 'addHotel'">
+    <app-add-hotel-form></app-add-hotel-form>
+  </div>
+</div>

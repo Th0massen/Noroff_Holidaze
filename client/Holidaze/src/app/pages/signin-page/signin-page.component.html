@@ -1,0 +1,17 @@
+
+<div class="[ signin ]">
+  <div class="[ signin--header ]">
+    <img class="[ signin--header__img ]" [src]="headerLogo" alt="Holidaze">
+  </div>
+  <form [formGroup]="loginForm" class="[ signin--form ]">
+    <p class="[ signin--form__title ]">Sign in</p>
+    <label class="[ signin--form__label ]">Username</label>
+    <input class="[ signin--form__field ]" id="username" type="text" formControlName="username" >
+    <label class="[ signin--form__label ]">Password</label>
+    <input class="[ signin--form__field ]" id="password" type="password" formControlName="password">
+    <button class="[ signin--form__button ]" (click)="login(loginForm.value)">Sign in</button>
+  </form>
+  <div class="[ signin--error ]" *ngIf="!loginStatus">
+      Incorrect username or password.
+    </div>
+</div>

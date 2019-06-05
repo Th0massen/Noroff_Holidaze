@@ -29,6 +29,7 @@ export class SpecificHotelComponent implements OnInit {
 
   showEnquiryForm:boolean = false;
 
+  // Gets the current url id
   fetchUrlParameters(){
     this.url.queryParams.subscribe( url => {
       this.urlParam = url['id'];
@@ -36,6 +37,7 @@ export class SpecificHotelComponent implements OnInit {
     this.fetchHotelData();
   }
 
+  // fetch hotel matching url id
   fetchHotelData(){
     console.log(this.urlParam)
     if( this.hotelData.length < 1 ){
@@ -54,6 +56,10 @@ export class SpecificHotelComponent implements OnInit {
 
   onOrderClick(){
     this.showEnquiryForm = true;
+  }
+
+  hideForm(){
+    this.showEnquiryForm = false;
   }
 
 }

@@ -1,0 +1,10 @@
+.adminpage{
+    text-align: center;
+    padding-top: 65px;
+    &--list{
+        padding-top: 65px;
+        &__title{
+            font-size: 21px;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+
+.signin{
+    padding-top: 45px;
+    &--header{
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 60px;
+        &__img{
+            width: 250px;
+            height: auto;
+        }
+    }
+    &--error{
+        color: red;
+        text-align: center;
+        padding: 5px;
+        font-size: 18px;
+    }
+    &--form{
+        border: 1px solid black;
+        width: 250px;
+        margin: 0 auto;
+        &__title{
+            text-align: center;
+            padding-top: 25px;
+        }
+        &__label{
+            padding-top: 10px;
+            display: block;
+            text-align: center;
+        }
+        &__field{
+            text-align: center;
+            display: block;
+            margin: 0 auto 35px;
+            width: 150px;
+        }
+        &__button{
+            display: block;
+            text-align: center;
+            margin: 0 auto 15px;
+        }
+    }
+}

@@ -6,23 +6,48 @@
   </div>
   
   <div class="[ homepage--icons ]">
-    <button class="[ homepage--icons__btn ]" (click)="onHotelClick()">Hotels</button>
-    <button class="[ homepage--icons__btn ]" (click)="onRoomClick()">Rooms</button>
-    <button class="[ homepage--icons__btn ]" (click)="onBnbClick()">Bed & Breakfast</button>
+    <button class="[ homepage--icons__btn ]" (click)="onHotelClick()">
+      <img src="../../../assets/hotel_icon.svg" alt="hotel icon">
+    </button>
+    <button class="[ homepage--icons__btn ]" (click)="onRoomClick()">
+      <img src="../../../assets/house_icon.svg" alt="house">
+    </button>
+    <button class="[ homepage--icons__btn ]" (click)="onBnbClick()">
+      <img src="../../../assets/bnb_icon.svg" alt="bed and breakfast">
+    </button>
   </div>
 
   <div class="[ homepage--info ]">
-    <div class="[ homepage--info__text ]" *ngIf="iconStatus === 'hotel'">
-      <p>Hotels</p>
+    <div *ngIf="iconStatus === 'hotel'">
+      <p class="[ homepage--info__title ]">Hotels</p>
+      <p class="[ homepage--info__text ]">
+        We offer a wide range of hotels all over the world.<br/><br>
+        All our hotels are of 5<span class="[ star ]">&#x2605;</span> quality, offering the best in service and luxury.<br/><br>
+        Find the perfect hotel for you and your family at your <a routerLink="hotels_page" [queryParams]="{ key: iconStatus }">dream destination here.</a>
+      </p>
     </div>
-    <div class="[ homepage--info__text ]" *ngIf="iconStatus === 'room'">
-      <p>Rooms</p>
+    <div *ngIf="iconStatus === 'house'">
+      <p class="[ homepage--info__title ]">Apartments</p>
+      <p class="[ homepage--info__text ]">
+        We have apartments, cabins and houses available on several locations.<br/><br/>
+        Looking for an apartment in one of the large cities around the world to experience the busy life.<br/><br>
+        Or if you are looking for a peaceful, quiet area to relax, <a routerLink="hotels_page" [queryParams]="{ key: iconStatus }">browse through our offers here.</a> 
+      </p>
     </div>
-    <div class="[ homepage--info__text ]" *ngIf="iconStatus === 'bnb'">
-      <p>Bed and Breakfast</p>
+    <div *ngIf="iconStatus === 'bed'">
+      <p class="[ homepage--info__title ]">Bed and Breakfast</p>
+      <p class="[ homepage--info__text ]"> 
+        Our exquisite bed and breakfast offers are ready for you.<br/><br>
+        Enjoy everything your destination has to offer and more, while staying at one of our bed and breakfast establishments.<br/><br/>
+        Excellent hosts and staff are ready and eager to help make your vacation the best one yet. <a routerLink="hotels_page" [queryParams]="{ key: iconStatus }">Find your next bnb house now.</a> 
+      </p>
     </div>
   </div>
-
+<!--
+  <div class="[ homepage--img ]">
+    <img class="[ homepage--img__element ]" [src]="adImg" alt="Enjoy a stay at our locations">
+  </div>
+-->
   <p class="[ homepage--section ]">Highlighted offers</p>
   <div class="[ homepage--offers ]" *ngIf="establishmentData.length > 0" >
     <app-establishment-card *ngFor="let i of establishmentData" [establishments]="i">

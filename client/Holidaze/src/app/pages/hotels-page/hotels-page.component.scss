@@ -1,6 +1,12 @@
 .hotelpage{
     padding-top: 150px;
 }
+.orderConfirm{
+    position: fixed;
+    padding-top: 50px;
+    width: 100%;
+    z-index: 6;
+}
 .search{
     padding-top: 75px;
     margin: 0 auto;
@@ -9,14 +15,15 @@
     z-index: 5;
     width: 100%;
     padding-bottom: 15px;
-    background-color: lightgrey;
+    background-color: #65B3F2;
     &--logo{
         padding: 0 0 10px;
         height: 50px;
     }
     &--bar{
         &__field{
-            width: 350px;
+            width: 85%;
+            max-width: 350px;
             padding: 5px;
         }
     }
@@ -24,4 +31,12 @@
 .error{
     text-align: center;
     padding-top: 50px;
+}
+    
+@media ( max-width: 630px ){
+    .search{
+        &--logo{
+            display: none;
+        }
+    }
 }

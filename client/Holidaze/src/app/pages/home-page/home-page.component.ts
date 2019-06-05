@@ -19,18 +19,21 @@ export class HomePageComponent implements OnInit {
   }
 
   logo:string = "../../../assets/logo.svg"
+  adImg:string = '../../assets/indexImg.jpg';
   iconStatus:string = "hotel";
 
+  // Switch between buttons on homepage
   onHotelClick(){
     this.iconStatus = "hotel";
   }
   onRoomClick(){
-    this.iconStatus = "room";
+    this.iconStatus = "house";
   }
   onBnbClick(){
-    this.iconStatus = "bnb";
+    this.iconStatus = "bed";
   }
   
+  // Get hotel data
   RequestData(){
     if( this.establishmentData.length < 1){
       this.hotels.getHotels().subscribe((response:any)=>{

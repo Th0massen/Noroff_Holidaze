@@ -3,8 +3,11 @@
       <h1 class="[ specific--info__title ]">{{ hotelName }}</h1>
       <p class="[ specific--info__smallcontent ]">{{ hotelData[0].type }}</p>
       <p class="[ specific--info__content ]">{{ hotelDescription }}</p>
+      <label class="[ specific--info__label ]">E-mail:</label>
       <p class="[ specific--info__smallcontent ]">{{ hotelMail }}</p>
+      <label class="[ specific--info__label ]">Price:</label>
       <p class="[ specific--info__smallcontent ]">Price: ${{ hotelPrice }},-</p>
+      <label class="[ specific--info__label ]"> Guests: </label>
       <p class="[ specific--info__smallcontent ]">Max number of guests: {{ hotelMaxGuests }}.</p>
       <button class="[ specific--info__button ]" (click)="onOrderClick()">Place an enquiry</button>
   </div>
@@ -14,5 +17,5 @@
 </div>
 
 <div class="[ enquiryForm ]" *ngIf="showEnquiryForm">
-  <app-enquiry [hotelDetails]="hotelData"></app-enquiry>
+  <app-enquiry [hotelDetails]="hotelData" [id]="urlParam" (hideForm)='hideForm()'></app-enquiry>
 </div>

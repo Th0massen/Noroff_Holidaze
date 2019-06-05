@@ -1,0 +1,44 @@
+<form [formGroup]="newHotelForm" id="newHotelForm" class="[ addHotel ]" method="POST" action="http://localhost/noroff_exam/server/add-establishments-success.php">
+  <label class="[ addHotel--label ]" for="establishmentName">Establishment Name</label>
+  <input formControlName="name" class="[ addHotel--field ]" type="text" name="establishmentName" id="establishmentName">
+  
+  <label class="[ addHotel--label ]" for="establishmentEmail">Establishment Email</label>
+  <input formControlName="email" class="[ addHotel--field ]" type="text" name="establishmentEmail" id="establishmentEmail">
+  
+  <label class="[ addHotel--label ]" for="imageUrl">Image URL</label>
+  <input formControlName="imageUrl" class="[ addHotel--field ]" type="text" name="imageUrl" id="imageUrl">
+
+  <label class="[ addHotel--label ]" for="selfCatering">Type</label>
+  <label class="[ addHotel--label ]" for="hotel">Hotel</label>
+  <input class="[ addHotel--field ]" type="radio" id="hotel" name="type" value="Hotel" checked>
+  <label class="[ addHotel--label ]" for="house">House</label>
+  <input class="[ addHotel--field ]" type="radio" id="house" name="type" value="House">
+  <label class="[ addHotel--label ]" for="bnb">Bed & Breakfast</label>
+  <input class="[ addHotel--field ]" type="radio" id="bnb" name="type" value="Bed & Breakfast">
+  
+  <label class="[ addHotel--label ]" for="price">Price per person per night ($)</label>
+  <input formControlName="price" class="[ addHotel--field ]" type="number" name="price" id="price">
+  
+  <label class="[ addHotel--label ]" for="maxGuests">Max guests</label>
+  <input formControlName="guests" class="[ addHotel--field ]" type="number" name="maxGuests" id="maxGuests">
+  
+  <label class="[ addHotel--label ]" for="googleLat">Google Coordinates Latitude</label>
+  <input formControlName="Lat" class="[ addHotel--field ]" type="text" name="googleLat" id="googleLat">
+  
+  <label class="[ addHotel--label ]" for="googleLong">Google Coordinates Longitude</label>
+  <input formControlName="Long" class="[ addHotel--field ]" type="text" name="googleLong" id="googleLong">
+  
+  <label class="[ addHotel--label ]" for="description">Description</label>
+  <input formControlName="description" class="[ addHotel--field ]" type="text" name="description" id="description">
+  
+  <label class="[ addHotel--label ]" for="selfCatering">Self-catering</label>
+  <label class="[ addHotel--label ]" for="true">True</label>
+  <input class="[ addHotel--field ]" type="radio" id="true" name="selfCatering" value="true">
+  <label class="[ addHotel--label ]" for="false">False</label>
+  <input class="[ addHotel--field ]" type="radio" id="false" name="selfCatering" value="false" checked>
+  
+  <label class="[ addHotel--label ]" for="id">ID</label>
+  <input class="[ addHotel--field ]" type="text" name="id" id="id" [value]="hotelId" readonly>
+  
+  <button class="[ addHotel--submit ]" type="submit" (click)="onSubmit()">Submit</button>
+</form>

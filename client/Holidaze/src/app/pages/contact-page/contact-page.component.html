@@ -1,3 +1,4 @@
+<div class="[ background ]">
 <form #form class="[ form ]" [formGroup]="contactForm" method="POST" id="contactForm" (ngSubmit)="onSubmit()" action="http://localhost/noroff_exam/server/contact-success.php">
   <label class="[ form--label ]" for="clientName">Full Name</label>
   <input class="[ form--input ]" formControlName="clientName" type="text" name="clientName" id="clientName">
@@ -16,7 +17,8 @@
   </div><br/>
   <button class="[ form--submit ]" type="submit" value="submit" >Submit</button>
 </form>
-
 <div class="formSuccess" *ngIf="confirmSentForm"> 
-  <p>Form sent successfully</p>
+  <p>Your message has been delivered!</p>
 </div>
+</div>
+<div class="buffer"></div>

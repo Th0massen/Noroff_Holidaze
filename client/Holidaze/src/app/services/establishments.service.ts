@@ -9,9 +9,9 @@ export class EstablishmentsService {
 
   constructor() {}
 
+  // sends requested data to components requesting it.
   getHotels(){
     return of(HotelData);
-    //return this.http.get(this.establishments)
   }
 
 }

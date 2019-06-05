@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EstablishmentsService } from 'src/app/services/establishments.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-hotels-page',
@@ -8,17 +9,27 @@ import { EstablishmentsService } from 'src/app/services/establishments.service';
 })
 export class HotelsPageComponent implements OnInit {
 
-  constructor( private hotels: EstablishmentsService ) { }
+  constructor( 
+    private hotels: EstablishmentsService,
+    private url: ActivatedRoute  
+  ) { }
 
   ngOnInit() {
+    if( localStorage.getItem('enquiryStatus') === 'SENT' ){
+      this.confirmOrder = true;
+    }
     this.RequestData();
+    this.urlKey();
   }
 
+  confirmOrder:boolean = false;
   logo:string = "../../../assets/logo.svg";
+  searchKey:string;
   searchTerm:any = [];
   establishments:any = [];
   filteredResults:any = [];
 
+  // Retrieve hotel data
   RequestData(){
     if( this.establishments.length < 1){
       this.hotels.getHotels().subscribe( (response:any) =>{
@@ -30,6 +41,20 @@ export class HotelsPageComponent implements OnInit {
     }
   }
 
+  urlKey(){
+    this.url.queryParams.subscribe( url => {
+      let key = url['key'];
+      if( key !== undefined ){
+        console.log(key);
+        this.searchKey = key;
+        (<HTMLInputElement>document.getElementById('searchbar')).value = this.searchKey;
+        this.onSearch();
+      }
+    });
+  }
+
+
+  // filter and display results matching provided search criteria
   onSearch(){
     window.scrollTo( 0, 0 );
     this.searchTerm = (<HTMLInputElement>document.getElementById('searchbar')).value;
@@ -41,7 +66,6 @@ export class HotelsPageComponent implements OnInit {
         case 'house':
         case 'House':
           return hotel.type.toLowerCase().includes(this.searchTerm.trim().toLowerCase());
-        case 'bnb':
         case 'bed':
         case 'bed and breakfast':
         case 'bed & breakfast':

@@ -18,6 +18,11 @@ import { ListItemComponent } from './components/list-item/list-item.component';
 import { SpecificHotelComponent } from './pages/specific-hotel/specific-hotel.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { EnquiryComponent } from './components/enquiry/enquiry.component';
+import { EnquirySuccessComponent } from './components/enquiry-success/enquiry-success.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { SigninPageComponent } from './pages/signin-page/signin-page.component';
+import { AdminCardComponent } from './components/admin-card/admin-card.component';
+import { AddHotelFormComponent } from './components/add-hotel-form/add-hotel-form.component';
 
 
 @NgModule({
@@ -34,7 +39,12 @@ import { EnquiryComponent } from './components/enquiry/enquiry.component';
     ListItemComponent,
     SpecificHotelComponent,
     ContactPageComponent,
-    EnquiryComponent
+    EnquiryComponent,
+    EnquirySuccessComponent,
+    AdminPageComponent,
+    SigninPageComponent,
+    AdminCardComponent,
+    AddHotelFormComponent,
   ],
   imports: [
     BrowserModule,

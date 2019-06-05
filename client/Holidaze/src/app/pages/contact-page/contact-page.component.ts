@@ -16,6 +16,7 @@ export class ContactPageComponent implements OnInit {
   confirmSentForm:boolean = false;
 
   constructor() {
+    // Setup formgroup
     this.contactForm = new FormGroup({
       'clientName': new FormControl('', [ 
         Validators.required 
@@ -42,6 +43,7 @@ export class ContactPageComponent implements OnInit {
     let nameStatus = this.contactForm.controls.clientName.status;
     let emailStatus = this.contactForm.controls.clientEmail.status;
     let msgStatus = this.contactForm.controls.clientMessage.status;
+    // Check form status and return matching error
     if( this.contactForm.status === 'INVALID' ){
       switch( nameStatus ){
         case 'INVALID':

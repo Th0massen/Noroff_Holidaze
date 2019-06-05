@@ -1,0 +1,15 @@
+.success{
+    display: block;
+    background-color: rgba(55, 190, 55, 0.95);
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    &--exit{
+        border: none;
+        background: none;
+        color: white;
+        position: relative;
+        float: right;
+        font-size: 20px;
+    }
+}
