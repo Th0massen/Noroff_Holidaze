@@ -5,16 +5,18 @@
     margin: 50px auto;
     border: 1px solid black;
     max-width: 800px;
+    &--link{
+        text-decoration: none;
+        color: black;
+        height:  100%;
+        display: inline-block;
+    }
     &--img{
         text-align: left;
         padding: 0;
         margin: 0;
-        height: 220px;
+        height: 100%;
         width: auto;
-        &__link{
-            text-decoration: none;
-            color: black;
-        }
         &__title{
             position: absolute;
             background-color: #65B3F2;
@@ -25,11 +27,14 @@
             padding-top: 0;
             padding: 5px 10px;
             width: 120px;
+            font-family: 'Domine', serif;
         }
         &__element{
             padding: 0;
             margin: 0;
-            height: 220px;
+            height: 100%;
+            max-height: 250px;
+            display: flex;
             width: 350px;
         }    
     }
@@ -37,6 +42,7 @@
         padding: 15px 15px 0;
         text-align: center;
         position:relative;
+        font-family: 'Montserrat', sans-serif;
         &__btn{
             position: absolute;
             right: 0;

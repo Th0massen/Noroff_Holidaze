@@ -55,7 +55,7 @@ export class EnquiryComponent implements OnInit {
       switch( fullName ){
         case 'INVALID':
           this.nameError = true;
-          document.getElementById('clientName').style.borderLeft = '5px solid red';
+          document.getElementById('clientName').style.borderLeft = '5px solid rgb(146, 8, 8)';
         break;
         default:
           this.nameError = false;
@@ -65,7 +65,7 @@ export class EnquiryComponent implements OnInit {
       switch( email ){
         case 'INVALID':
           this.emailError = true;
-          document.getElementById('email').style.borderLeft = '5px solid red';
+          document.getElementById('email').style.borderLeft = '5px solid rgb(146, 8, 8)';
           break;
         default:
           this.emailError = false;
@@ -75,7 +75,7 @@ export class EnquiryComponent implements OnInit {
       switch( checkIn ){
         case 'INVALID':
           this.checkInError = true;
-          document.getElementById('checkin').style.borderLeft = '5px solid red';
+          document.getElementById('checkin').style.borderLeft = '5px solid rgb(146, 8, 8)';
           break;
         default:
           this.checkInError = false;
@@ -85,7 +85,7 @@ export class EnquiryComponent implements OnInit {
       switch( checkOut ){
         case 'INVALID':
           this.checkOutError = true;
-          document.getElementById('checkout').style.borderLeft = '5px solid red';
+          document.getElementById('checkout').style.borderLeft = '5px solid rgb(146, 8, 8)';
           break;
         default:
           this.checkOutError = false;

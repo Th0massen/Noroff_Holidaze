@@ -7,4 +7,23 @@
             font-size: 21px;
         }
     }
+    &--selector{
+        &__btn{
+            width: 150px;
+            padding: 5px 0;
+            font-family: 'Domine', serif;
+        }
+    }
+}
+
+@media ( max-width: 455px ){
+    .adminpage{
+        &--selector{
+            &__btn{
+                display: block;
+                text-align: center;
+                margin: 5px auto 0;
+            }
+        }
+    }
 }

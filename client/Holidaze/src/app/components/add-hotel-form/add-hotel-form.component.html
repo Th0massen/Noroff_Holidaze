@@ -9,12 +9,12 @@
   <input formControlName="imageUrl" class="[ addHotel--field ]" type="text" name="imageUrl" id="imageUrl">
 
   <label class="[ addHotel--label ]" for="selfCatering">Type</label>
-  <label class="[ addHotel--label ]" for="hotel">Hotel</label>
-  <input class="[ addHotel--field ]" type="radio" id="hotel" name="type" value="Hotel" checked>
-  <label class="[ addHotel--label ]" for="house">House</label>
-  <input class="[ addHotel--field ]" type="radio" id="house" name="type" value="House">
-  <label class="[ addHotel--label ]" for="bnb">Bed & Breakfast</label>
-  <input class="[ addHotel--field ]" type="radio" id="bnb" name="type" value="Bed & Breakfast">
+  <label class="[ addHotel--radioLabel ]" for="hotel">Hotel</label>
+  <input class="[ addHotel--radio ]" type="radio" id="hotel" name="type" value="Hotel" checked>
+  <label class="[ addHotel--radioLabel ]" for="house">House</label>
+  <input class="[ addHotel--radio ]" type="radio" id="house" name="type" value="House">
+  <label class="[ addHotel--radioLabel ]" for="bnb">Bed & Breakfast</label>
+  <input class="[ addHotel--radio ]" type="radio" id="bnb" name="type" value="Bed & Breakfast">
   
   <label class="[ addHotel--label ]" for="price">Price per person per night ($)</label>
   <input formControlName="price" class="[ addHotel--field ]" type="number" name="price" id="price">
@@ -32,10 +32,10 @@
   <input formControlName="description" class="[ addHotel--field ]" type="text" name="description" id="description">
   
   <label class="[ addHotel--label ]" for="selfCatering">Self-catering</label>
-  <label class="[ addHotel--label ]" for="true">True</label>
-  <input class="[ addHotel--field ]" type="radio" id="true" name="selfCatering" value="true">
-  <label class="[ addHotel--label ]" for="false">False</label>
-  <input class="[ addHotel--field ]" type="radio" id="false" name="selfCatering" value="false" checked>
+  <label class="[ addHotel--radioLabel ]" for="true">True</label>
+  <input class="[ addHotel--radio ]" type="radio" id="true" name="selfCatering" value="true">
+  <label class="[ addHotel--radioLabel ]" for="false">False</label>
+  <input class="[ addHotel--radio ]" type="radio" id="false" name="selfCatering" value="false" checked>
   
   <label class="[ addHotel--label ]" for="id">ID</label>
   <input class="[ addHotel--field ]" type="text" name="id" id="id" [value]="hotelId" readonly>

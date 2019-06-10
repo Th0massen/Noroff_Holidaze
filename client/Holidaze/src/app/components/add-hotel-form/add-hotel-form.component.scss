@@ -2,11 +2,22 @@
     text-align: center;
     margin: 0 auto;
     &--label{
+        margin-top: 15px;
         display: block;
+        font-family: 'Domine', serif;
+        font-size: 15px;
     }
     &--field{
         display: block;
-        margin: 0 auto 10px;
+        margin: 5px auto 15px;
         padding-left: 5px;
+        width: 150px;
+    }
+    &--radio{
+        display: inline-block;
+        margin: 5px 15px 15px 5px;
+    }
+    &--submit{
+        margin: 5px auto 15px;
     }
 }

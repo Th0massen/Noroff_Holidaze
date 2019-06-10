@@ -8,30 +8,32 @@
     &--img{
         justify-content: stretch;
         &__content{
-            width: 100%;
+            width: 800px;
             height: 100%;
         }
     }
     &--info{
         padding: 15px 15px 5px;
         &__label{
-            font-family: 'Domine', serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 14px;
             color: #65B3F2;
         }
         &__title{
             border-bottom: 1px solid black;
             padding-left: 25px;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Domine', serif;
         }
         &__content{
             margin: 0;
             padding: 5px 25px 55px;
+            font-family: 'Montserrat', sans-serif;
         }
         &__smallcontent{
             text-align: left;
             font-size: 15px;
             padding-left: 25px;
+            font-family: 'Montserrat', sans-serif;
         }
         &__button{
             padding: 5px 15px;
@@ -52,6 +54,16 @@
     z-index: 5px;
 }
 
+@media ( max-width: 1020px ){
+    .specific{
+        &--img{
+            &__content{
+                width: 600px;
+            }
+        }
+    }
+}
+
 @media ( max-width: 845px ){
     .specific{
         display: flex;
@@ -60,6 +72,7 @@
         &--img{
             &__content{
                 height: 350px;
+                width: 100%;
             }
         }
         &--info{

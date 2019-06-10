@@ -29,6 +29,7 @@
             padding: 5px 10px;
             margin: 15px;
             border-radius: 15px;
+            font-family: 'Domine', serif;
         }
     }
     &--info{
@@ -41,6 +42,7 @@
             text-align: center;
             line-height: 25px;
             padding: 0 15px;
+            font-family: 'Montserrat', sans-serif;
         }
     }
     &--img{
@@ -54,7 +56,7 @@
         margin-top: 115px;
         padding-left: 35px;
         border-bottom: 1px solid black;
-        font-family: 'Domine', serif;
+        font-family: 'Montserrat', sans-serif;
     }
     &--offers{
         display: flex;

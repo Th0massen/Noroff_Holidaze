@@ -1,8 +1,7 @@
 <div class="[ card ]">
-  <a routerLink="hotels_page/hotel" [queryParams]="{id: establishments.id}"> 
-    <p class="[ card--title ]">{{ establishments.establishmentName }}</p>
+  <a routerLink="hotels_page/hotel" [queryParams]="{id: establishments.id}">
     <img class="[ card--img ]" [src]=establishments.imageUrl alt="Hotel Image">
+    <p class="[ card--title ]">{{ establishments.establishmentName }}</p>
     <p class="[ card--text ]"> {{ establishments.description }} </p>
-    <p class="[ card--text ]"> ${{ establishments.price }},- </p>
   </a>
 </div>

@@ -1,10 +1,10 @@
 <div class="[ card ]">
-  <div class="[ card--img ]">
-    <a class="[ card--img__link ]" [routerLink]="['hotel']" [queryParams]="{ id:specificId.id }">
+  <a class="[ card--link ]" [routerLink]="['hotel']" [queryParams]="{ id:specificId.id }">
+    <div class="[ card--img ]">
       <p class="[ card--img__title ]">{{ establishments.type }}</p>
       <img class="[ card--img__element ]" [src]=establishments.imageUrl alt='establishment image'>
-    </a>
-  </div>
+    </div>
+  </a>
   <div class="[ card--description ]">
     <p class="[ card--description__text ]">{{ establishments.establishmentName }}</p><hr>
     <p class="[ card--description__text ]">{{ establishments.description }}</p>
